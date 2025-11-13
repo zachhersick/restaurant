@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Menu
+{% endblock %}
+
+{% block header %}
+Menu
+{% endblock %}
+
+{% block content %}
+<br><br>
+Look at the menu
+
+<ul id='menuList'>
+    {% for dish in dishes %}
+        <li><span class='dishName'> {{ dish }}</span><span class='dishPrice'> {{ dish.price }}</span></li>
+        
+    {% endfor %}
+</ul>
+<br><br>
+
+
+{% endblock %}
