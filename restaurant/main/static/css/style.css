@@ -41,14 +41,14 @@ header , footer {
 main {
     background-color: #ffffff;
     color: #000000;
-    height: 30em;
     padding: 2em; 
     border-top: 3px solid rgb(211, 72, 72);
     border-bottom: 3px solid rgb(211, 72, 72);
 }
 
 #menuList {
-    max-width: 400px;
+    max-width: 800px;
+    margin: auto;
 }
 
 #menuList li{
@@ -61,11 +61,13 @@ main {
     display: flex; 
     flex-direction: row;
     align-items: flex-end;
+    align-items: baseline;
 }
 
 #menuList hr {
     display: flex; 
     flex-grow: 2;
+    margin: 0 1em 0 1em;
 }
 
 

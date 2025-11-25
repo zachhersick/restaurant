@@ -13,19 +13,21 @@ Menu
 Look at the menu
 
 <ul id='menuList'>
-    {% for dish in dishes %}
-    <li>
-        <span class='dishName'> {{ dish }}</span>
-        <div> 
-            <span class="dishIngredients"> {{ dish.ingredients_it }} </span> 
-            <hr>
-            <span class='dishPrice'> {{ dish.price }}</span>
-        </div>
-    </li>
-
+    {% regroup dishes by course__name_en as course_list %}
+    {% for course in course_list %}
+        <h2> {{ course.grouper }} </h2>
+        {% for dish in course.list %}
+            <li>
+                <span class='dishName'> {{ dish.name_en }}</span>
+                <div> 
+                    <span class="dishIngredients"> {{ dish.ingredients_en }} </span> 
+                    <hr>
+                    <span class='dishPrice'> {{ dish.price }}</span>
+                </div>
+            </li>
+        {% endfor %}
     {% endfor %}
 </ul>
 <br><br>
-
 
 {% endblock %}

@@ -6,12 +6,11 @@ def home(request):
     return render('', 'index.html')
 
 def menu(request):
-    dish_list = Dish.objects.order_by('id')
-    course_list = Course.objects.order_by('id')
-    context = {
-        'dishes' : dish_list,
-        'courses' : course_list,
-    }
+    dish_list = (Dish.objects
+                .values('course__name_en', 'name_en', 'price', 'ingredients_en')
+                .order_by('course__name_en', 'name_en')
+            )
+    context = {'dishes' : dish_list}
     return render(request, 'menu.html', context)
 
 def aboutpage(request):
