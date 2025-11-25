@@ -14,8 +14,15 @@ Look at the menu
 
 <ul id='menuList'>
     {% for dish in dishes %}
-        <li><span class='dishName'> {{ dish }}</span><span class='dishPrice'> {{ dish.price }}</span></li>
-        
+    <li>
+        <span class='dishName'> {{ dish }}</span>
+        <div> 
+            <span class="dishIngredients"> {{ dish.ingredients_it }} </span> 
+            <hr>
+            <span class='dishPrice'> {{ dish.price }}</span>
+        </div>
+    </li>
+
     {% endfor %}
 </ul>
 <br><br>

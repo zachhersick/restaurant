@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: sans-serif;
     background-color: #0a0a0f;
     color: #f0f0f0;
 }
@@ -47,10 +47,36 @@ main {
     border-bottom: 3px solid rgb(211, 72, 72);
 }
 
+#menuList {
+    max-width: 400px;
+}
+
 #menuList li{
     display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
 }
+
+#menuList div {
+    display: flex; 
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#menuList hr {
+    display: flex; 
+    flex-grow: 2;
+}
+
 
 span.dishPrice {
     color: blue;
+}
+
+span.dishName {
+    font-size: 150%;
+}
+
+span.dishIngredients {
+    font-weight: lighter;
 }
