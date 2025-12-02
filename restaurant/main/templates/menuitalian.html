@@ -9,17 +9,18 @@ Menu
 {% endblock %}
 
 {% block content %}
+
 <br><br>
 
 <ul id='menuList'>
-    {% regroup dishes by course__name_en as course_list %}
+    {% regroup dishes by course__name_it as course_list %}
     {% for course in course_list %}
         <h2> {{ course.grouper }} </h2>
         {% for dish in course.list %}
             <li>
-                <span class='dishName'> {{ dish.name_en }}</span>
+                <span class='dishName'> {{ dish.name_it }}</span>
                 <div> 
-                    <span class="dishIngredients"> {{ dish.ingredients_en }} </span> 
+                    <span class="dishIngredients"> {{ dish.ingredients_it }} </span> 
                     <hr>
                     <span class='dishPrice'> {{ dish.price }}</span>
                 </div>
@@ -28,5 +29,6 @@ Menu
     {% endfor %}
 </ul>
 <br><br>
+
 
 {% endblock %}

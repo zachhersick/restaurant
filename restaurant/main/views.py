@@ -13,6 +13,14 @@ def menu(request):
     context = {'dishes' : dish_list}
     return render(request, 'menu.html', context)
 
+def menuitalian(request):
+    dish_list = (Dish.objects
+                .values('course__name_it', 'name_it', 'price', 'ingredients_it')
+                .order_by('course__name_it', 'name_it')
+            )
+    context = {'dishes' : dish_list}
+    return render(request, 'menuitalian.html', context)
+
 def aboutpage(request):
     return render(request, 'about.html')
 

@@ -14,8 +14,9 @@
 
   <body>
     <header>
-      <div>JCU RESTAURANT </div>
+      <img src="{% static 'images/logo.png' %}" alt="Restaurant Logo" class="logo">
     </header>
+
     {% include 'partials/_nav.html' %}
 
 
@@ -31,7 +32,18 @@
     </main>
 
     <footer>
-      <p>footers</p>
+      <div class="footer-inner">
+        <div class="footer-name">Trattoria Lungara</div>
+
+        <div class="footer-info">
+            <div>📍 Via della Lungara 233, Rome</div>
+            <div>📞 +39 06-123-1234</div>
+            <div>🕒 Open Daily: 12:00 : 00:00</div>
+        </div>
+
+        <div class="footer-copy">
+            © 2025 Trattoria Lungara. All rights reserved.
+        </div>
       {% comment %} {% include 'partials/_footer.html' %} {% endcomment %}
     </footer>
   </body>
